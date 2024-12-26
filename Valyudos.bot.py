@@ -62,7 +62,7 @@ def convert(message):
             raise ConvertionException('Много/мало параметров было передано боту')
 
         base, quote, amount = value
-        result = CryptoConverter.convert(base, quote, amount)
+        result = CryptoConverter.get_price(base, quote, amount)
 
     except ConvertionException as e:
         bot.reply_to(message, f"Ошибка пользователя. \n {e}")
